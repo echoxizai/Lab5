@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Canvas Smiley</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="619" height="618"></canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        // Background
+        ctx.fillStyle = 'lightgreen';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Face
+        ctx.beginPath();
+        ctx.arc(310, 295, 240, 0, 2 * Math.PI);
+        ctx.fillStyle = 'yellow';
+        ctx.fill();
+        ctx.strokeStyle = 'darkslategray';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Eyes
+        ctx.beginPath();
+        ctx.arc(225, 250, 17, 0, 2 * Math.PI);
+        ctx.arc(400, 250, 17, 0, 2 * Math.PI);
+        ctx.fillStyle = 'black';
+        ctx.fill();
+
+        // Nose
+        ctx.beginPath();
+        ctx.moveTo(310, 310);
+        ctx.lineTo(310, 368);
+        ctx.strokeStyle = 'darkslategray';
+        ctx.stroke();
+
+        // Smile
+        ctx.beginPath();
+        ctx.arc(310, 360, 140, 0.15 * Math.PI, 0.85 * Math.PI);
+        ctx.stroke();
+
+        // Text
+        ctx.font = 'bold 30px Arial, sans-serif';
+        ctx.fillStyle = 'darkgreen';
+        ctx.textAlign = 'center';
+        ctx.fillText('The Canvas brought me to life!', 310, 590);
+    </script>
+</body>
+</html>
